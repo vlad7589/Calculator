@@ -17,7 +17,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:layout_weight="1.9">
+            android:layout_weight="1.9"
+            android:gravity="end|bottom"
+            android:textSize="40sp"
+            android:text="">
         </TextView>
         <GridLayout
             android:layout_width="match_parent"
