@@ -36,6 +36,7 @@ android {
 }
 
 dependencies {
+    implementation(files("libs/exp4j-0.4.8.jar"))
     val lifecycle_version = "2.8.6"
 
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
