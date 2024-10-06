@@ -26,7 +26,7 @@
                 android:layout_weight="1.9"
                 android:gravity="end|bottom"
                 android:textSize="@dimen/text_size"
-                android:text="">
+                android:text="@{viewModel.translateText.toString()}">
             </TextView>
             <GridLayout
                 android:layout_width="match_parent"

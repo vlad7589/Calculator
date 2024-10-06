@@ -11,17 +11,21 @@ class ViewModel : ViewModel() {
         get() = _currentExpression
     var getAns = false
 
+    var translateText = MutableLiveData<String>("")
     fun getSymbol(view: View) {
         getAns = false
         val btn = view as Button
         _currentExpression += btn.text.toString()
+        translateText.value += btn.text.toString()
     }
     fun getNumber(view: View) {
         if(getAns) {
+            translateText.value = ""
             _currentExpression = ""
             getAns = false
         }
         val btn = view as Button
         _currentExpression += btn.text.toString()
+        translateText.value += btn.text.toString()
     }
 }
