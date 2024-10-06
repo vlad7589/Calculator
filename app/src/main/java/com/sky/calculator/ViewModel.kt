@@ -32,8 +32,9 @@ class ViewModel : ViewModel() {
 
     fun equals() {
         val exp = ExpressionBuilder(currentExpression).build()
-        var res = exp.evaluate()
+        val res = exp.evaluate()
         getAns = true
-        translateText.value = res.toString()
+        if(res.toInt() - res == 0.0) translateText.value = res.toInt().toString()
+        else translateText.value = res.toString()
     }
 }

@@ -191,7 +191,8 @@
                     android:layout_height="@dimen/btn_height"
                     android:layout_row="4"
                     android:layout_column="2"
-                    android:text="=" />
+                    android:text="="
+                    android:onClick="@{() -> viewModel.equals()}"/>
 
                 <Button
                     android:id="@+id/buttonPlus"
