@@ -11,18 +11,27 @@ class ViewModel : ViewModel() {
     val currentExpression
         get() = _currentExpression
     var getAns = false
+    var pressPercent = false
 
     var translateText = MutableLiveData<String>("")
     fun getSymbol(view: View) {
         getAns = false
         val btn = view as Button
-        _currentExpression += btn.text.toString()
-        translateText.value += btn.text.toString()
+        when(btn.text.toString()) {
+            "%" -> percent()
+            else -> {
+                _currentExpression += btn.text.toString()
+                translateText.value += btn.text.toString()
+            }
+        }
     }
     fun getNumber(view: View) {
         if(getAns) {
             clearText()
             getAns = false
+        } else if (pressPercent) {
+            _currentExpression += "*"
+            translateText.value += "*"
         }
         val btn = view as Button
         _currentExpression += btn.text.toString()
@@ -35,6 +44,12 @@ class ViewModel : ViewModel() {
         getAns = true
         if(res.toInt() - res == 0.0) translateText.value = res.toInt().toString()
         else translateText.value = res.toString()
+    }
+
+    fun percent(){
+        translateText.value += "%"
+        _currentExpression += "/100"
+        pressPercent = true
     }
 
     fun clearText() {
