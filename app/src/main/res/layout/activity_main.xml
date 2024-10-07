@@ -50,7 +50,8 @@
                     android:layout_height="@dimen/btn_height"
                     android:layout_row="0"
                     android:layout_column="1"
-                    android:text="+/-" />
+                    android:text="+/-"
+                    android:onClick="@{() -> viewModel.plusMinusBtn()}"/>
 
                 <Button
                     android:id="@+id/buttonPercent"
@@ -58,7 +59,8 @@
                     android:layout_height="@dimen/btn_height"
                     android:layout_row="0"
                     android:layout_column="2"
-                    android:text="%" />
+                    android:text="%"
+                    android:onClick="@{(it) -> viewModel.getSymbol(it)}"/>
 
                 <Button
                     android:id="@+id/buttonDelete"
