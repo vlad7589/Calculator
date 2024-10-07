@@ -21,8 +21,7 @@ class ViewModel : ViewModel() {
     }
     fun getNumber(view: View) {
         if(getAns) {
-            translateText.value = ""
-            _currentExpression = ""
+            clearText()
             getAns = false
         }
         val btn = view as Button
@@ -36,5 +35,10 @@ class ViewModel : ViewModel() {
         getAns = true
         if(res.toInt() - res == 0.0) translateText.value = res.toInt().toString()
         else translateText.value = res.toString()
+    }
+
+    fun clearText() {
+        translateText.value = ""
+        _currentExpression = ""
     }
 }
