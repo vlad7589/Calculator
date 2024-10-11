@@ -26,6 +26,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1.8"
                 android:gravity="end|bottom"
+                android:paddingBottom="20dp"
                 android:textSize="@dimen/text_size"
                 android:text="@{viewModel.translateText.toString()}">
             </TextView>
