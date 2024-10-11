@@ -19,7 +19,8 @@
             android:layout_height="match_parent"
             android:weightSum="3"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="20dp"
+            android:background="@color/background_color">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="fill_parent"
@@ -36,7 +37,7 @@
                 android:rowCount="5"
                 android:useDefaultMargins="true"
                 android:alignmentMode="alignBounds">
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/buttonCE"
                     android:layout_width="0dp"
                     android:layout_rowWeight="1"
@@ -44,10 +45,11 @@
                     android:layout_gravity="fill"
                     android:layout_row="0"
                     android:layout_column="0"
+                    android:background="@drawable/custom_rect_btn"
                     android:text="CE"
                     android:onClick="@{() -> viewModel.clearText()}"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/buttonBrackets"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -56,9 +58,10 @@
                     android:layout_column="1"
                     android:layout_columnWeight="1"
                     android:layout_gravity="fill"
+                    android:background="@drawable/custom_rect_btn"
                     android:text="( )" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/buttonPM"
                     android:layout_width="0dp"
                     android:layout_rowWeight="1"
@@ -66,10 +69,11 @@
                     android:layout_gravity="fill"
                     android:layout_row="4"
                     android:layout_column="0"
+                    android:background="@drawable/custom_rect_btn"
                     android:text="+/-"
                     android:onClick="@{() -> viewModel.plusMinusBtn()}"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/buttonPercent"
                     android:layout_width="0dp"
                     android:layout_rowWeight="1"
@@ -77,10 +81,11 @@
                     android:layout_gravity="fill"
                     android:layout_row="0"
                     android:layout_column="2"
+                    android:background="@drawable/custom_rect_btn"
                     android:text="%"
                     android:onClick="@{(it) -> viewModel.getSymbol(it)}"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/buttonDelete"
                     android:layout_width="0dp"
                     android:layout_rowWeight="1"
@@ -88,10 +93,11 @@
                     android:layout_gravity="fill"
                     android:layout_row="0"
                     android:layout_column="3"
+                    android:background="@drawable/custom_rect_btn"
                     android:text="/"
                     android:onClick="@{(it) -> viewModel.getSymbol(it)}"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button7"
                     android:layout_width="0dp"
                     android:layout_rowWeight="1"
@@ -99,10 +105,11 @@
                     android:layout_gravity="fill"
                     android:layout_row="1"
                     android:layout_column="0"
+                    android:background="@drawable/custom_rect_btn2"
                     android:text="7"
                     android:onClick="@{(it) -> viewModel.getNumber(it)}"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button8"
                     android:layout_width="0dp"
                     android:layout_rowWeight="1"
@@ -110,10 +117,11 @@
                     android:layout_gravity="fill"
                     android:layout_row="1"
                     android:layout_column="1"
+                    android:background="@drawable/custom_rect_btn2"
                     android:text="8"
                     android:onClick="@{(it) -> viewModel.getNumber(it)}"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button9"
                     android:layout_width="0dp"
                     android:layout_rowWeight="1"
@@ -121,10 +129,11 @@
                     android:layout_gravity="fill"
                     android:layout_row="1"
                     android:layout_column="2"
+                    android:background="@drawable/custom_rect_btn2"
                     android:text="9"
                     android:onClick="@{(it) -> viewModel.getNumber(it)}"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button0"
                     android:layout_width="0dp"
                     android:layout_rowWeight="1"
@@ -132,10 +141,11 @@
                     android:layout_gravity="fill"
                     android:layout_row="4"
                     android:layout_column="1"
+                    android:background="@drawable/custom_rect_btn2"
                     android:text="0"
                     android:onClick="@{(it) -> viewModel.getNumber(it)}"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button5"
                     android:layout_width="0dp"
                     android:layout_rowWeight="1"
@@ -143,10 +153,11 @@
                     android:layout_gravity="fill"
                     android:layout_row="2"
                     android:layout_column="1"
+                    android:background="@drawable/custom_rect_btn2"
                     android:text="5"
                     android:onClick="@{(it) -> viewModel.getNumber(it)}"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/buttonMinus"
                     android:layout_width="0dp"
                     android:layout_rowWeight="1"
@@ -154,10 +165,11 @@
                     android:layout_gravity="fill"
                     android:layout_row="2"
                     android:layout_column="3"
+                    android:background="@drawable/custom_rect_btn"
                     android:text="-"
                     android:onClick="@{(it) -> viewModel.getSymbol(it)}"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button2"
                     android:layout_width="0dp"
                     android:layout_rowWeight="1"
@@ -165,10 +177,11 @@
                     android:layout_gravity="fill"
                     android:layout_row="3"
                     android:layout_column="1"
+                    android:background="@drawable/custom_rect_btn2"
                     android:text="2"
                     android:onClick="@{(it) -> viewModel.getNumber(it)}"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/buttonDot"
                     android:layout_width="0dp"
                     android:layout_rowWeight="1"
@@ -176,10 +189,11 @@
                     android:layout_gravity="fill"
                     android:layout_row="4"
                     android:layout_column="2"
+                    android:background="@drawable/custom_rect_btn2"
                     android:text="."
                     android:onClick="@{(it) -> viewModel.getNumber(it)}"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button3"
                     android:layout_width="0dp"
                     android:layout_rowWeight="1"
@@ -187,10 +201,11 @@
                     android:layout_gravity="fill"
                     android:layout_row="3"
                     android:layout_column="2"
+                    android:background="@drawable/custom_rect_btn2"
                     android:text="3"
                     android:onClick="@{(it) -> viewModel.getNumber(it)}"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button4"
                     android:layout_width="0dp"
                     android:layout_rowWeight="1"
@@ -198,10 +213,11 @@
                     android:layout_gravity="fill"
                     android:layout_row="2"
                     android:layout_column="0"
+                    android:background="@drawable/custom_rect_btn2"
                     android:text="4"
                     android:onClick="@{(it) -> viewModel.getNumber(it)}"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button1"
                     android:layout_width="0dp"
                     android:layout_rowWeight="1"
@@ -209,10 +225,11 @@
                     android:layout_gravity="fill"
                     android:layout_row="3"
                     android:layout_column="0"
+                    android:background="@drawable/custom_rect_btn2"
                     android:text="1"
                     android:onClick="@{(it) -> viewModel.getNumber(it)}"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/buttonMultiplication"
                     android:layout_width="0dp"
                     android:layout_rowWeight="1"
@@ -220,10 +237,11 @@
                     android:layout_gravity="fill"
                     android:layout_row="1"
                     android:layout_column="3"
+                    android:background="@drawable/custom_rect_btn"
                     android:text="*"
                     android:onClick="@{(it) -> viewModel.getSymbol(it)}"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button6"
                     android:layout_width="0dp"
                     android:layout_rowWeight="1"
@@ -231,10 +249,11 @@
                     android:layout_gravity="fill"
                     android:layout_row="2"
                     android:layout_column="2"
+                    android:background="@drawable/custom_rect_btn2"
                     android:text="6"
                     android:onClick="@{(it) -> viewModel.getNumber(it)}"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/buttonEquals"
                     android:layout_width="0dp"
                     android:layout_rowWeight="1"
@@ -242,10 +261,11 @@
                     android:layout_gravity="fill"
                     android:layout_row="4"
                     android:layout_column="3"
+                    android:background="@drawable/custom_rect_btn"
                     android:text="="
                     android:onClick="@{() -> viewModel.equals()}"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/buttonPlus"
                     android:layout_width="0dp"
                     android:layout_rowWeight="1"
@@ -253,6 +273,7 @@
                     android:layout_gravity="fill"
                     android:layout_row="3"
                     android:layout_column="3"
+                    android:background="@drawable/custom_rect_btn"
                     android:text="+"
                     android:onClick="@{(it) -> viewModel.getSymbol(it)}"/>
 
