@@ -13,6 +13,7 @@ class ViewModel : ViewModel() {
     var getAns = false
     var pressPercent = false
     var plusMinusOn = false
+    var openBrackets = false
 
     var translateText = MutableLiveData<String>("")
     fun getSymbol(view: View) {
@@ -39,6 +40,7 @@ class ViewModel : ViewModel() {
         val btn = view as Button
         _currentExpression += btn.text.toString()
         translateText.value += btn.text.toString()
+        if(translateText.value.toString().contains('(')) openBrackets = true
     }
 
     fun equals() {
@@ -58,6 +60,17 @@ class ViewModel : ViewModel() {
         translateText.value += "%"
         _currentExpression += "/100"
         pressPercent = true
+    }
+
+    fun addBrackets(){
+        if(!openBrackets){
+            _currentExpression += '('
+            translateText.value += '('
+        } else {
+            _currentExpression += ')'
+            translateText.value += ')'
+            openBrackets = false
+        }
     }
 
     fun plusMinusBtn(){
