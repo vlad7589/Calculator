@@ -45,15 +45,21 @@ class ViewModel : ViewModel() {
 
     fun equals() {
         val parenthesisCount = currentExpression.count { it == '(' } - currentExpression.count { it == ')' }
-        val exp = ExpressionBuilder(currentExpression + ')'.toString().repeat(parenthesisCount)).build()
-        val res = exp.evaluate()
-        getAns = true
-        _currentExpression = res.toString()
-        if(res.toInt() - res == 0.0) translateText.value = res.toInt().toString()
-        else translateText.value = res.toString()
-        pressPercent = false
-        if(res < 0) plusMinusOn = true
-        else plusMinusOn = false
+        try {
+            val exp = ExpressionBuilder(currentExpression + ')'.toString().repeat(parenthesisCount)).build()
+            val res = exp.evaluate()
+            getAns = true
+            _currentExpression = res.toString()
+            if(res.toInt() - res == 0.0) translateText.value = res.toInt().toString()
+            else translateText.value = res.toString()
+            pressPercent = false
+            if(res < 0) plusMinusOn = true
+            else plusMinusOn = false
+            openBrackets = false
+        } catch (e: Exception){
+            clearText()
+            getAns = false
+        }
     }
 
     fun percent(){
@@ -63,6 +69,7 @@ class ViewModel : ViewModel() {
     }
 
     fun addBrackets(){
+        getAns = false
         if(!openBrackets){
             _currentExpression += '('
             translateText.value += '('
