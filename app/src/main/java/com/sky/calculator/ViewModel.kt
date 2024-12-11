@@ -59,6 +59,7 @@ class ViewModel : ViewModel() {
         } catch (e: Exception){
             clearText()
             getAns = false
+            openBrackets = false
         }
     }
 
@@ -115,5 +116,6 @@ class ViewModel : ViewModel() {
         translateText.value = ""
         _currentExpression = ""
         plusMinusOn = false
+        pressPercent = false
     }
 }
