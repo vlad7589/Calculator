@@ -13,6 +13,7 @@ class ViewModel : ViewModel() {
     var getAns = false
     var pressPercent = false
     var plusMinusOn = false
+    var openBrackets = false
 
     var translateText = MutableLiveData<String>("")
     fun getSymbol(view: View) {
@@ -39,25 +40,45 @@ class ViewModel : ViewModel() {
         val btn = view as Button
         _currentExpression += btn.text.toString()
         translateText.value += btn.text.toString()
+        if(translateText.value.toString().contains('(')) openBrackets = true
     }
 
     fun equals() {
         val parenthesisCount = currentExpression.count { it == '(' } - currentExpression.count { it == ')' }
-        val exp = ExpressionBuilder(currentExpression + ')'.toString().repeat(parenthesisCount)).build()
-        val res = exp.evaluate()
-        getAns = true
-        _currentExpression = res.toString()
-        if(res.toInt() - res == 0.0) translateText.value = res.toInt().toString()
-        else translateText.value = res.toString()
-        pressPercent = false
-        if(res < 0) plusMinusOn = true
-        else plusMinusOn = false
+        try {
+            val exp = ExpressionBuilder(currentExpression + ')'.toString().repeat(parenthesisCount)).build()
+            val res = exp.evaluate()
+            getAns = true
+            _currentExpression = res.toString()
+            if(res.toInt() - res == 0.0) translateText.value = res.toInt().toString()
+            else translateText.value = res.toString()
+            pressPercent = false
+            if(res < 0) plusMinusOn = true
+            else plusMinusOn = false
+            openBrackets = false
+        } catch (e: Exception){
+            clearText()
+            getAns = false
+            openBrackets = false
+        }
     }
 
     fun percent(){
         translateText.value += "%"
         _currentExpression += "/100"
         pressPercent = true
+    }
+
+    fun addBrackets(){
+        getAns = false
+        if(!openBrackets){
+            _currentExpression += '('
+            translateText.value += '('
+        } else {
+            _currentExpression += ')'
+            translateText.value += ')'
+            openBrackets = false
+        }
     }
 
     fun plusMinusBtn(){
@@ -95,5 +116,6 @@ class ViewModel : ViewModel() {
         translateText.value = ""
         _currentExpression = ""
         plusMinusOn = false
+        pressPercent = false
     }
 }

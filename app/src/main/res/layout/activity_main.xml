@@ -60,6 +60,7 @@
                     android:layout_columnWeight="1"
                     android:layout_gravity="fill"
                     android:background="@drawable/custom_rect_btn"
+                    android:onClick="@{() -> viewModel.addBrackets()}"
                     android:text="( )" />
 
                 <androidx.appcompat.widget.AppCompatButton
